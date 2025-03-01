@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: authorization-server
+  main:
+    web-application-type: servlet
+
+  session:
+    timeout: 10s
+    redis:
+      namespace: authorization:session
+      configure-action: none
+      repository-type: indexed
+      cleanup-cron: 0 * * * * *
+      flush-mode: on-save
+      save-mode: on-set-attribute
+
+  data:
+    redis:
+      repositories:
+        enabled: true
+      host: localhost
+      port: 6379
+      timeout: 3000
+      database: 0
+      client-type: lettuce
+
+logging:
+  level:
+    org.springframework.security: trace
+
+management:
+  server:
+    port: 8888
