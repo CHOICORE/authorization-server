@@ -11,11 +11,6 @@ import org.springframework.stereotype.Component
 
 @Component
 class HttpSessionEventListener {
-//    @EventListener
-//    fun onEvents(event: ApplicationEvent) {
-//        log.info("Received event: ${event.javaClass.name}")
-//    }
-
     @EventListener
     fun processSessionCreatedEvent(event: SessionCreatedEvent) {
         log.info("Received session created event: ${event.sessionId}")

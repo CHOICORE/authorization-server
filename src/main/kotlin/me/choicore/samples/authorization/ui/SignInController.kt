@@ -5,7 +5,7 @@ import org.springframework.ui.Model
 import org.springframework.web.bind.annotation.GetMapping
 
 @Controller
-class LoginController {
+class SignInController {
     @GetMapping("/sign-in")
     fun signIn(model: Model): String = "account/login-form"
 }
